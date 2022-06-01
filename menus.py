@@ -1,4 +1,5 @@
 import os
+from menu_clientes import inserir_cliente, modificar_cliente, eliminar_cliente, listar_clientes
 
 
 def main_menu():
