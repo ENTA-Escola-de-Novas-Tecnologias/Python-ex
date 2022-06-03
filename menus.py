@@ -2,13 +2,13 @@ import os
 from menu_clientes import inserir_cliente, modificar_cliente, eliminar_cliente, listar_clientes
 
 
-def main_menu():
+def main_menu(control, tabelas):
     opcoes = {
         '0': 'quit()',
-        '1': 'menu_clientes()',
-        '2': 'menu_produtos()',
-        '3': 'menu_transportes()',
-        '4': 'menu_encomendas()',
+        '1': 'menu_clientes(control, tabelas)',
+        '2': 'menu_produtos(control, tabelas)',
+        '3': 'menu_transportes(control, tabelas)',
+        '4': 'menu_encomendas(control, tabelas)',
         '5': 'menu_relatorios()'
     }
     while True:
@@ -28,27 +28,29 @@ def main_menu():
                 break
 
 
-def menu_clientes():
-    opcoes = {
-        '0': 'print()',
-        '1': 'inserir_cliente()',
-        '2': 'modificar_cliente()',
-        '3': 'eliminar_cliente()',
-        '4': 'listar_clientes()'
-    }
-    os.system('clear')
-    print('MENU CLIENTES')
-    print('1. Inserir cliente')
-    print('2. Modificar cliente')
-    print('3. Eliminar cliente')
-    print('4. Listar clientes')
-    print('0. Voltar')
+def menu_clientes(control, tabelas):
     while True:
-        opcao = int(input('Insira uma opção válida: '))
-        if 0 <= opcao <= 4:
-            eval(opcoes.get(str(opcao)))
-            break
-
+        opcoes = {
+            '0': 'print()',
+            '1': 'inserir_cliente(control, tabelas)',
+            '2': 'modificar_cliente(control, tabelas)',
+            '3': 'eliminar_cliente(control, tabelas)',
+            '4': 'listar_clientes()'
+        }
+        os.system('clear')
+        print('MENU CLIENTES')
+        print('1. Inserir cliente')
+        print('2. Modificar cliente')
+        print('3. Eliminar cliente')
+        print('4. Listar clientes')
+        print('0. Voltar')
+        while True:
+            opcao = int(input('Insira uma opção válida: '))
+            if 0 < opcao <= 4:
+                eval(opcoes.get(str(opcao)))
+                break
+            else:
+                return
 
 
 def menu_produtos():
@@ -68,9 +70,11 @@ def menu_produtos():
     print('0. Voltar')
     while True:
         opcao = int(input('Insira uma opção válida: '))
-        if 0 <= opcao <= 4:
+        if 0 < opcao <= 4:
             eval(opcoes.get(str(opcao)))
             break
+        else:
+            return
 
 
 def menu_transportes():
@@ -90,9 +94,11 @@ def menu_transportes():
     print('0. Voltar')
     while True:
         opcao = int(input('Insira uma opção válida: '))
-        if 0 <= opcao <= 4:
+        if 0 < opcao <= 4:
             eval(opcoes.get(str(opcao)))
             break
+        else:
+            return
 
 
 def menu_encomendas():
@@ -108,9 +114,11 @@ def menu_encomendas():
     print('0. Voltar')
     while True:
         opcao = int(input('Insira uma opção válida: '))
-        if 0 <= opcao <= 2:
+        if 0 < opcao <= 4:
             eval(opcoes.get(str(opcao)))
             break
+        else:
+            return
 
 
 def menu_encomendas_detalhe():
@@ -130,9 +138,11 @@ def menu_encomendas_detalhe():
     print('0. Voltar')
     while True:
         opcao = int(input('Insira uma opção válida: '))
-        if 0 <= opcao <= 4:
+        if 0 < opcao <= 4:
             eval(opcoes.get(str(opcao)))
             break
+        else:
+            return
 
 
 def menu_relatorios():
@@ -152,6 +162,8 @@ def menu_relatorios():
     print('0. Voltar')
     while True:
         opcao = int(input('Insira uma opção válida: '))
-        if 0 <= opcao <= 4:
+        if 0 < opcao <= 4:
             eval(opcoes.get(str(opcao)))
             break
+        else:
+            return

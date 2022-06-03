@@ -1,15 +1,20 @@
-def inserir_cliente():
-    print('no inserir clientes')
-    input('Press ENTER to continue')
-    pass
+from inserir import inserir_dados
+
+
+def inserir_cliente(control, tabelas):
+    inserir_dados('dados/clientes.csv', control, tabelas)
+
 
 def modificar_cliente():
-    pass
+    print('no inserir clientes')
+    input('Press ENTER to continue')
 
 
 def eliminar_cliente():
-    pass
+    print('no inserir clientes')
+    input('Press ENTER to continue')
+
 
 def listar_clientes():
-    pass
-
+    print('no inserir clientes')
+    input('Press ENTER to continue')

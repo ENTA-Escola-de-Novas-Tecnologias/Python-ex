@@ -1,12 +1,11 @@
 from Control import Control
+from inicializar_tabelas import Tabelas
 from menus import main_menu, menu_produtos
+
+INITAPP = True
 
 if __name__ == '__main__':
     control = Control('dados/control.csv', )
-    print(control.ids['idproduto'])
-    print(control.ids['idcliente'])
-    print(control.ids['idencomenda'])
-    print(control.ids['idtransporte'])
-
-    print(control.getset('idproduto'))
+    tabelas = Tabelas(INITAPP)
+    main_menu(control, tabelas)
 

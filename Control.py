@@ -1,3 +1,6 @@
+import csv
+
+
 class Control:
     def __init__(self, controlfile):
         self.controlfile = controlfile
@@ -7,15 +10,25 @@ class Control:
 
     def ler_control_file(self):
         with open(self.controlfile, encoding='utf-8') as file:
-            self.headers = next(file)
-            fields = self.headers.rstrip().split(',')
-            values = next(file).rstrip().split(',')
-        for idx in range(0, 4):
+            for num, line in enumerate(file, 1):
+                if num == 1:
+                    self.headers = line
+                    fields = self.headers.rstrip().split(',')
+                elif num == 2:
+                    values = line.rstrip().split(',')
+        if num == 1:
+            values = []
+            for field in fields:
+                values.append(0)
+            with open(self.controlfile, 'a', encoding='utf-8') as file:
+                writer = csv.writer(file)
+                writer.writerow(values)
+        for idx in range(0, len(fields)):
             self.ids[fields[idx]] = values[idx]
 
     def getset(self, chave):
-        self.ids[chave] = str(int(self.ids[chave]) + 1)
+        self.ids[chave] = int(self.ids[chave]) + 1
         with open(self.controlfile, 'w', encoding='utf-8') as file:
-            file.write(self.headers)
-            file.write(",".join(self.ids.values()))
+            writer = csv.writer(file)
+            writer.writerows([self.ids.values()])
         return self.ids[chave]
