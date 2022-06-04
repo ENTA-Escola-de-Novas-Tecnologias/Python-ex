@@ -1,4 +1,5 @@
 import os
+from inserir import inserir_dados, inserir_encomenda
 from menu_clientes import inserir_cliente, modificar_cliente, eliminar_cliente, listar_clientes
 
 
@@ -32,7 +33,7 @@ def menu_clientes(control, tabelas):
     while True:
         opcoes = {
             '0': 'print()',
-            '1': 'inserir_cliente(control, tabelas)',
+            '1': 'inserir_dados("dados/clientes.csv", control, tabelas)',
             '2': 'modificar_cliente(control, tabelas)',
             '3': 'eliminar_cliente(control, tabelas)',
             '4': 'listar_clientes()'
@@ -53,10 +54,10 @@ def menu_clientes(control, tabelas):
                 return
 
 
-def menu_produtos():
+def menu_produtos(control, tabelas):
     opcoes = {
         '0': 'print()',
-        '1': 'inserir_produto()',
+        '1': 'inserir_dados("dados/produtos.csv", control, tabelas)',
         '2': 'modificar_produto()',
         '3': 'eliminar_produto()',
         '4': 'listar_produtos()'
@@ -77,10 +78,10 @@ def menu_produtos():
             return
 
 
-def menu_transportes():
+def menu_transportes(control, tabelas):
     opcoes = {
         '0': 'print()',
-        '1': 'inserir_transporte()',
+        '1': 'inserir_dados("dados/transportes.csv", control, tabelas)',
         '2': 'modificar_transporte()',
         '3': 'eliminar_transporte()',
         '4': 'listar_transportes()'
@@ -101,39 +102,19 @@ def menu_transportes():
             return
 
 
-def menu_encomendas():
+def menu_encomendas(control, tabelas):
     opcoes = {
         '0': 'print()',
-        '1': 'manter_encomenda()',
-        '2': 'manter_detalhe_encomendas()'
-    }
-    os.system('clear')
-    print('MENU Encomendas')
-    print('1. Manter Encomenda')
-    print('2. Manter Detalhe da Encomenda')
-    print('0. Voltar')
-    while True:
-        opcao = int(input('Insira uma opção válida: '))
-        if 0 < opcao <= 4:
-            eval(opcoes.get(str(opcao)))
-            break
-        else:
-            return
-
-
-def menu_encomendas_detalhe():
-    opcoes = {
-        '0': 'print()',
-        '1': 'inserir_detalhe()',
+        '1': 'inserir_encomenda("dados/encomendas.csv", control, tabelas)',
         '2': 'modificar_detalhe()',
         '3': 'eliminar_detalhe()',
         '4': 'listar_encomendas()'
     }
     os.system('clear')
     print('MENU Detalhes de Encomenda')
-    print('1. Inserir detalhe encomenda')
-    print('2. Modificar Detalhe Encomenda')
-    print('3. Eliminar Detalhe Encomenda')
+    print('1. Inserir encomenda')
+    print('2. Modificar Encomenda')
+    print('3. Eliminar Encomenda')
     print('4. Listar Encomendas')
     print('0. Voltar')
     while True:
@@ -145,7 +126,7 @@ def menu_encomendas_detalhe():
             return
 
 
-def menu_relatorios():
+def menu_relatorios(control, tabelas):
     opcoes = {
         '0': 'print()',
         '1': 'listar_clientes()',

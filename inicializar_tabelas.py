@@ -11,7 +11,7 @@ class Tabelas:
     def inicializar_tabelas(self):
         self.tabelas = [
             'dados/clientes.csv', 'dados/produtos.csv', 'dados/encomendas.csv', 'dados/encdetalhe.csv',
-            'dados/control.csv'
+            'dados/transportes.csv', 'dados/control.csv'
         ]
         self.fields = [
             [
@@ -19,6 +19,7 @@ class Tabelas:
                 ['IDPRODUTO', 'NOME', 'CUSTO', 'STOCK', 'ENCOMENDAS', 'MINIMO'],
                 ['IDENCOMENDA', 'IDCLIENTE', 'DATA', 'IDTRANSPORTE'],
                 ['IDENCOMENDA', 'IDPRODUTO', 'QUANTIDADE', 'PRECO'],
+                ['IDTRANSPORTE', 'NOME'],
                 ['IDPRODUTO', 'IDCLIENTE', 'IDENCOMENDA', 'IDTRANSPORTE']
             ],
             [
@@ -28,6 +29,7 @@ class Tabelas:
                  'Mínimo disponível: '],
                 ['IDENCOMENDA', 'ID do cliente: ', 'Data da encomenta: ', 'ID da transportadora: '],
                 ['IDENCOMENDA', 'ID do produto: ', 'Quantidade: ', 'Preço: '],
+                ['IDTRANSPORTE', 'Nome da transportadora: '],
                 ['IDPRODUTO', 'IDCLIENTE', 'IDENCOMENDA', 'IDTRANSPORTE']
             ]
         ]
