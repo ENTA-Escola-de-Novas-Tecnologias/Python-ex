@@ -31,6 +31,14 @@ class Tabelas:
                 ['IDENCOMENDA', 'ID do produto: ', 'Quantidade: ', 'Preço: '],
                 ['IDTRANSPORTE', 'Nome da transportadora: '],
                 ['IDPRODUTO', 'IDCLIENTE', 'IDENCOMENDA', 'IDTRANSPORTE']
+            ],
+            [
+                [len('IDCLIENTE'), len('NOME'), len('MORADA'), len('CPOSTAL'), len('LOCALIDADE'), len('TELEFONE')],
+                [len('IDPRODUTO'), len('NOME'), len('CUSTO'), len('STOCK'), len('ENCOMENDAS'), len('MINIMO')],
+                [len('IDENCOMENDA'), len('IDCLIENTE'), len('DATA'), len('IDTRANSPORTE')],
+                [len('IDENCOMENDA'), len('IDPRODUTO'), len('QUANTIDADE'), len('PRECO')],
+                [len('IDTRANSPORTE'), len('NOME')],
+                [len('IDPRODUTO'), len('IDCLIENTE'), len('IDENCOMENDA'), len('IDTRANSPORTE')]
             ]
         ]
         if self.limpar:
@@ -40,3 +48,9 @@ class Tabelas:
                     writer = csv.writer(output)
                     writer.writerow(self.fields[0][idx])
                 idx += 1
+
+    def setmax(self, d1, d2, d3, comprimento):
+        self.fields[d1][d2][d3] = comprimento
+
+    def getmax(self, d1, d2, d3):
+        return self.fields[d1][d2][d3]

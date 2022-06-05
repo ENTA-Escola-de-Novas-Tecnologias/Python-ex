@@ -1,15 +1,16 @@
 import os
+from listar import mostrar
 from inserir import inserir_dados, inserir_encomenda
-from menu_clientes import inserir_cliente, modificar_cliente, eliminar_cliente, listar_clientes
+from menu_clientes import modificar_cliente, eliminar_cliente, listar_clientes
 
 
-def main_menu(control, tabelas):
+def main_menu(control, ficheiros):
     opcoes = {
         '0': 'quit()',
-        '1': 'menu_clientes(control, tabelas)',
-        '2': 'menu_produtos(control, tabelas)',
-        '3': 'menu_transportes(control, tabelas)',
-        '4': 'menu_encomendas(control, tabelas)',
+        '1': 'menu_clientes(control, ficheiros)',
+        '2': 'menu_produtos(control, ficheiros)',
+        '3': 'menu_transportes(control, ficheiros)',
+        '4': 'menu_encomendas(control, ficheiros)',
         '5': 'menu_relatorios()'
     }
     while True:
@@ -25,20 +26,21 @@ def main_menu(control, tabelas):
         while True:
             opcao = int(input('Insira uma opção válida: '))
             if 0 <= opcao <= 5:
+                print(ficheiros.fields)
                 eval(opcoes.get(str(opcao)))
                 break
 
 
-def menu_clientes(control, tabelas):
+def menu_clientes(control, ficheiros):
     while True:
         opcoes = {
             '0': 'print()',
-            '1': 'inserir_dados("dados/clientes.csv", control, tabelas)',
-            '2': 'modificar_cliente(control, tabelas)',
-            '3': 'eliminar_cliente(control, tabelas)',
-            '4': 'listar_clientes()'
+            '1': 'inserir_dados("dados/clientes.csv", control, ficheiros)',
+            '2': 'modificar_cliente(control, ficheiros)',
+            '3': 'eliminar_cliente(control, ficheiros)',
+            '4': 'mostrar("dados/clientes.csv", ficheiros)',
         }
-        os.system('clear')
+        #os.system('clear')
         print('MENU CLIENTES')
         print('1. Inserir cliente')
         print('2. Modificar cliente')
@@ -54,10 +56,10 @@ def menu_clientes(control, tabelas):
                 return
 
 
-def menu_produtos(control, tabelas):
+def menu_produtos(control, ficheiros):
     opcoes = {
         '0': 'print()',
-        '1': 'inserir_dados("dados/produtos.csv", control, tabelas)',
+        '1': 'inserir_dados("dados/produtos.csv", control, ficheiros)',
         '2': 'modificar_produto()',
         '3': 'eliminar_produto()',
         '4': 'listar_produtos()'
@@ -78,10 +80,10 @@ def menu_produtos(control, tabelas):
             return
 
 
-def menu_transportes(control, tabelas):
+def menu_transportes(control, ficheiros):
     opcoes = {
         '0': 'print()',
-        '1': 'inserir_dados("dados/transportes.csv", control, tabelas)',
+        '1': 'inserir_dados("dados/transportes.csv", control, ficheiros)',
         '2': 'modificar_transporte()',
         '3': 'eliminar_transporte()',
         '4': 'listar_transportes()'
@@ -102,10 +104,10 @@ def menu_transportes(control, tabelas):
             return
 
 
-def menu_encomendas(control, tabelas):
+def menu_encomendas(control, ficheiros):
     opcoes = {
         '0': 'print()',
-        '1': 'inserir_encomenda("dados/encomendas.csv", control, tabelas)',
+        '1': 'inserir_encomenda("dados/encomendas.csv", control, ficheiros)',
         '2': 'modificar_detalhe()',
         '3': 'eliminar_detalhe()',
         '4': 'listar_encomendas()'
@@ -126,7 +128,7 @@ def menu_encomendas(control, tabelas):
             return
 
 
-def menu_relatorios(control, tabelas):
+def menu_relatorios(control, ficheiros):
     opcoes = {
         '0': 'print()',
         '1': 'listar_clientes()',

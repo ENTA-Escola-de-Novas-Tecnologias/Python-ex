@@ -5,7 +5,8 @@ from menus import main_menu, menu_produtos
 INITAPP = True
 
 if __name__ == '__main__':
-    tabelas = Tabelas(INITAPP)
+    ficheiros = Tabelas(INITAPP)
     control = Control('dados/control.csv', )
-    main_menu(control, tabelas)
+    main_menu(control, ficheiros)
+
 
