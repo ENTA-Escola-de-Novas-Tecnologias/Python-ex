@@ -40,7 +40,7 @@ def menu_clientes(control, ficheiros):
             '0': 'print()',
             '1': 'inserir_dados("dados/clientes.csv", control, ficheiros)',
             '2': 'modificar_dados("dados/clientes.csv", control, ficheiros)',
-            '3': 'eliminar_dados("dados/clientes.csv")',
+            '3': 'eliminar_dados("dados/clientes.csv", ficheiros)',
             '4': 'mostrar("dados/clientes.csv", ficheiros)',
         }
         ##os.system('clear')
@@ -65,7 +65,7 @@ def menu_produtos(control, ficheiros):
             '0': 'print()',
             '1': 'inserir_dados("dados/produtos.csv", control, ficheiros)',
             '2': 'modificar_dados("dados/produtos.csv", control, ficheiros)',
-            '3': 'eliminar_dados("dados/produtos.csv")',
+            '3': 'eliminar_dados("dados/produtos.csv", ficheiros)',
             '4': 'mostrar("dados/produtos.csv", ficheiros)',
         }
         #os.system('clear')
@@ -89,7 +89,7 @@ def menu_transportes(control, ficheiros):
         '0': 'print()',
         '1': 'inserir_dados("dados/transportes.csv", control, ficheiros)',
         '2': 'modificar_dados("dados/produtos.csv", control, ficheiros)',
-        '3': 'eliminar_dados("dados/transportes.csv")',
+        '3': 'eliminar_dados("dados/transportes.csv", ficheiros)',
         '4': 'mostrar("dados/transportes.csv", ficheiros)',
     }
     #os.system('clear')
@@ -114,7 +114,7 @@ def menu_encomendas(control, ficheiros):
             '0': 'print()',
             '1': 'inserir_encomenda("dados/encomendas.csv", control, ficheiros)',
             '2': 'modificar_dados("dados/encomendas.csv", control, ficheiros)',
-            '3': 'eliminar_dados("dados/encomendas.csv")',
+            '3': 'eliminar_dados("dados/encomendas.csv", ficheiros)',
             '4': 'mostrar_encomendas("dados/encomendas.csv", ficheiros)'
         }
         #os.system('clear')

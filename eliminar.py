@@ -1,21 +1,24 @@
 import csv
 import os
+from listar import mostrar
 
 
-def eliminar_dados(filename, chave=None):
+def eliminar_dados(filename, ficheiros, chave=None, quiet=False):
     if chave is None:
+        mostrar(filename, ficheiros)
         chave = int(input('Insira o ID do registo que deseja eliminar: '))
     encontrado = False
     with open(filename) as in_file, open(filename + '.tmp', 'w') as out_file:
         reader = csv.reader(in_file)
         writer = csv.writer(out_file)
         for row in reader:
-            print(f'row[0]={row[0]} chave={chave}')
             if str(row[0]) == str(chave):
                 encontrado = True
-                print(f'Registo eliminado: {row}')
+                if not quiet:
+                    print(f'Registo eliminado: {row[0]}')
             else:
                 writer.writerow(row)
     os.replace(filename + '.tmp', filename)
     if not encontrado:
-        print(f'Registo com chave {row[0]} não existe.')
+        if not quiet:
+            print(f'Registo com chave {row[0]} não existe.')
