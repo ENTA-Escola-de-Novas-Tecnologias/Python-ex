@@ -37,7 +37,7 @@ def menu_clientes(control, ficheiros):
         opcoes = {
             '0': 'print()',
             '1': 'inserir_dados("dados/clientes.csv", control, ficheiros)',
-            '2': 'modificar_cliente(control, ficheiros)',
+            '2': 'modificar_dados("dados/clientes.csv", control, ficheiros)',
             '3': 'eliminar_cliente(control, ficheiros)',
             '4': 'mostrar("dados/clientes.csv", ficheiros)',
         }

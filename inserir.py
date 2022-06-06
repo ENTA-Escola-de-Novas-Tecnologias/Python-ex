@@ -1,7 +1,7 @@
 import csv
 
 
-def inserir_dados(filename, control, ficheiros, id=None):
+def inserir_dados(filename, control, ficheiros, id=None, onlyone=None):
     with open(filename, 'a') as file:
         tab = ficheiros.tabelas.index(filename)
         while True:
@@ -23,7 +23,10 @@ def inserir_dados(filename, control, ficheiros, id=None):
                 idx += 1
             writer = csv.writer(file)
             writer.writerow(linha)
-            if input('Continuar (s/n)?') != "s":
+            if onlyone is None:
+                if input('Continuar (s/n)?') != "s":
+                    break
+            else:
                 break
 
 
