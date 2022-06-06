@@ -1,6 +1,8 @@
 import os
 from listar import mostrar, mostrar_encomendas
 from inserir import inserir_dados, inserir_encomenda
+from modificar import modificar_dados
+from eliminar import eliminar_dados
 from menu_clientes import modificar_cliente, eliminar_cliente, listar_clientes
 
 

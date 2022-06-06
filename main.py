@@ -4,7 +4,7 @@ from Control import Control
 from inicializar_tabelas import Tabelas
 from menus import main_menu, menu_produtos
 
-INITAPP = False
+INITAPP = True
 
 if __name__ == '__main__':
     if INITAPP:
