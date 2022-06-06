@@ -10,9 +10,9 @@ def mostrar(filename, ficheiros, id=None):
             space = 0
             minus = 0
             idx = 0
+            if imprimiu_header and id is not None and id != line[0]:
+                continue
             for campo in line:
-                if imprimiu_header and id is not None and id != line[0]:
-                    continue
                 imprimiu_header = True
                 space += ficheiros.getmax(2, tab, idx) - minus + 1
                 minus = ficheiros.getmax(2, tab, idx)

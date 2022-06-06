@@ -27,7 +27,6 @@ class Control:
             self.ids[fields[idx]] = values[idx]
 
     def getset(self, chave):
-        print(f'self.ids={self.ids} chave={chave}')
         self.ids[chave] = int(self.ids[chave]) + 1
         with open(self.controlfile, 'w') as file:
             writer = csv.writer(file)
