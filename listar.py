@@ -2,6 +2,7 @@ import csv
 
 
 def mostrar(filename, ficheiros, id=None):
+    imprimiu_header = False
     tab = ficheiros.tabelas.index(filename)
     with open(filename, encoding='utf-8') as file:
         lines = csv.reader(file)
@@ -10,16 +11,15 @@ def mostrar(filename, ficheiros, id=None):
             minus = 0
             idx = 0
             for campo in line:
-                """
-                if idx > 0 and id is not None:
-                    if line[0] != id:
-                        continue
-                """
+                if imprimiu_header and id is not None and id != line[0]:
+                    continue
+                imprimiu_header = True
                 space += ficheiros.getmax(2, tab, idx) - minus + 1
                 minus = ficheiros.getmax(2, tab, idx)
                 print(f'{campo:<{space}}', end='')
                 idx += 1
-            print()
+            if idx > 0:
+                print()
 
 
 def mostrar_encomendas(filename, ficheiros):
