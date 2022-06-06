@@ -6,7 +6,7 @@ from menu_clientes import modificar_cliente, eliminar_cliente, listar_clientes
 
 def main_menu(control, ficheiros):
     opcoes = {
-        '0': 'quit()',
+        '0': 'print()',
         '1': 'menu_clientes(control, ficheiros)',
         '2': 'menu_produtos(control, ficheiros)',
         '3': 'menu_transportes(control, ficheiros)',
@@ -28,6 +28,8 @@ def main_menu(control, ficheiros):
             if 0 <= opcao <= 5:
                 eval(opcoes.get(str(opcao)))
                 break
+        if opcao == 0:
+            break
 
 
 def menu_clientes(control, ficheiros):

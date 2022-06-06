@@ -28,7 +28,7 @@ def inserir_dados(filename, control, ficheiros, id=None):
 
 
 def inserir_encomenda(filename, control, tabelas):
-    with open(filename, 'a', encoding='utf-8') as file:
+    with open(filename, 'a') as file:
         tab = tabelas.tabelas.index(filename)
         chave = None
         linha = []

@@ -4,7 +4,7 @@ import csv
 def mostrar(filename, ficheiros, id=None):
     imprimiu_header = False
     tab = ficheiros.tabelas.index(filename)
-    with open(filename, encoding='utf-8') as file:
+    with open(filename) as file:
         lines = csv.reader(file)
         for line in lines:
             space = 0
@@ -24,7 +24,7 @@ def mostrar(filename, ficheiros, id=None):
 
 def mostrar_encomendas(filename, ficheiros):
     tab = ficheiros.tabelas.index(filename)
-    with open(filename, encoding='utf-8') as file:
+    with open(filename) as file:
         lines = csv.reader(file)
         header = None
         for line in lines:

@@ -44,7 +44,7 @@ class Tabelas:
         if self.limpar:
             idx = 0
             for tabela in self.tabelas:
-                with open(tabela, 'w', encoding='utf-8') as output:
+                with open(tabela, 'w') as output:
                     writer = csv.writer(output)
                     writer.writerow(self.fields[0][idx])
                 idx += 1
