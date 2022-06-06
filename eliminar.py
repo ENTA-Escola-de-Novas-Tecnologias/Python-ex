@@ -10,10 +10,12 @@ def eliminar_dados(filename, chave=None):
         reader = csv.reader(in_file)
         writer = csv.writer(out_file)
         for row in reader:
-            if row[0] != chave:
+            print(f'row[0]={row[0]} chave={chave}')
+            if str(row[0]) == str(chave):
                 encontrado = True
                 print(f'Registo eliminado: {row}')
+            else:
                 writer.writerow(row)
     os.replace(filename + '.tmp', filename)
     if not encontrado:
-        print(f'Registo com chave {row} não existe.')
+        print(f'Registo com chave {row[0]} não existe.')
